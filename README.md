@@ -29,6 +29,7 @@ npm install hexo-filter-katex hexo-generator-search hexo-renderer-ejs hexo-rende
 
 # 3. 修改站点 _config.yml，把 theme 改成 vere
 #    theme: vere
+#    （代码高亮 syntax_highlighter 会被主题自动设为 prismjs，无需手动改）
 
 # 4. 启动预览
 npx hexo server
@@ -119,8 +120,8 @@ description: ''        # 用于 SEO 和搜索摘要
 author: 你的名字
 language: zh-CN        # 语言，影响日期格式等
 
-# 代码高亮 —— 必须设为 prismjs
-syntax_highlighter: prismjs
+# 代码高亮 —— 主题会自动设为 prismjs，无需手动配置
+syntax_highlighter: prismjs   # ← 即使站点写的是 highlight.js，主题也会自动覆盖
 prismjs:
   preprocess: true
   line_number: true    # 显示行号
@@ -189,7 +190,7 @@ themes/vere/
 
 **代码块没有高亮？**
 
-检查站点 `_config.yml` 中 `syntax_highlighter` 是否设为 `prismjs`，并且 `hexo-renderer-marked` 已经安装。
+主题启动时会自动将 `syntax_highlighter` 设为 `prismjs`（通过 `scripts/force-prismjs.js`），无需手动配置。如果仍未生效，检查 `hexo-renderer-marked` 是否安装，以及站点 `_config.yml` 中的 `highlight:` 块是否可以安全删除。
 
 **深色模式没有自动切换？**
 
