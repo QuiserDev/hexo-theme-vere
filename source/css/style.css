@@ -879,6 +879,37 @@ a:hover {
   color: var(--accent);
 }
 
+/* ===== Pagination ===== */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.pagination .extend {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: var(--post-nav-bg);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+
+.pagination .extend:hover {
+  background: var(--post-nav-hover-bg);
+  color: var(--accent);
+}
+
+.pagination .extend.next {
+  margin-left: auto;
+}
+
 /* ===== Blockquote ===== */
 :is(.post-content, .page-content) blockquote {
   border-left: 3px solid var(--blockquote-border);

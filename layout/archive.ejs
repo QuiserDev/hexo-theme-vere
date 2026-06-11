@@ -12,3 +12,13 @@
     <a href="<%- url_for(post.path) %>"><%= post.title %></a>
   </p>
 <% }); %>
+
+<nav class="pagination">
+  <%- paginator({
+    prev_text: '← Prev',
+    next_text: 'Next →',
+    mid_size: 0,
+    end_size: 0,
+    escape: false
+  }) %>
+</nav>

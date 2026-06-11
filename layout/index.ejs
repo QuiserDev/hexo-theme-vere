@@ -5,3 +5,13 @@
     <div class="post-excerpt"><%- post.excerpt %></div>
   </article>
 <% }); %>
+
+<nav class="pagination">
+  <%- paginator({
+    prev_text: '← Prev',
+    next_text: 'Next →',
+    mid_size: 0,
+    end_size: 0,
+    escape: false
+  }) %>
+</nav>
