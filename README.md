@@ -37,6 +37,52 @@ npx hexo server
 
 打开浏览器访问 `http://localhost:4000`，你应该能看到 Vere 的样子了。
 
+## 创建页面
+
+Hexo 初始化后只有一个首页和一篇示例文章。Tags 和 About 页面需要手动创建。
+
+### Tags 标签云页面
+
+```bash
+hexo new page tags
+```
+
+编辑 `source/tags/index.md`，将 front matter 改为：
+
+```yaml
+---
+title: Tags
+type: tags
+layout: tags
+---
+```
+
+`type: tags` 告诉 Hexo 这是标签聚合页，`layout: tags` 使用主题的标签云模板。页面会自动展示所有文章的标签，每个标签附带文章数。
+
+### About 关于页面
+
+```bash
+hexo new page about
+```
+
+编辑 `source/about/index.md`，在 `---` 分隔线之后写你的个人简介：
+
+```markdown
+---
+title: About
+layout: page
+---
+
+你好，我是 XXX。
+
+- GitHub: [@xxx](https://github.com/xxx)
+- Email: xxx@example.com
+```
+
+`layout: page` 使用通用页面模板。你也可以写完整的 Markdown 内容，包括图片、代码块等。
+
+> 创建完成后记得运行 `npx hexo generate` 重新生成。
+
 ## 功能一览
 
 ### 🌓 深色 / 浅色模式
