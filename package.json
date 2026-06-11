@@ -1,0 +1,11 @@
+{
+  "name": "hexo-theme-vere",
+  "version": "0.0.1",
+  "description": "A clean, academic-style Hexo theme with dark mode, search, and code highlighting",
+  "author": "Quiser",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QuiserDev/hexo-theme-vere"
+  }
+}

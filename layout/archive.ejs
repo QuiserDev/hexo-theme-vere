@@ -1,0 +1,14 @@
+<h1 class="archive-title"><%= __('archive') %></h1>
+
+<% var year = 0; %>
+<% page.posts.each(function(post){ %>
+  <% var postYear = date(post.date, 'YYYY'); %>
+  <% if (postYear !== year) { %>
+    <% year = postYear; %>
+    <h2 class="archive-year"><%= year %></h2>
+  <% } %>
+  <p class="archive-item">
+    <time><%= date(post.date, 'MM-DD') %></time>
+    <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+  </p>
+<% }); %>

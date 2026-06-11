@@ -1,0 +1,10 @@
+<h1 class="archive-title"><%= __('tags') %></h1>
+
+<div class="tag-cloud">
+  <% site.tags.sort('name').each(function(tag){ %>
+    <a class="tag-item" href="<%- url_for(tag.path) %>">
+      <span class="tag-name"><%= tag.name %></span>
+      <span class="tag-count"><%= tag.length %></span>
+    </a>
+  <% }); %>
+</div>

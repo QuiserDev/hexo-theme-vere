@@ -1,0 +1,7 @@
+<% page.posts.each(function(post){ %>
+  <article class="post-item">
+    <h2 class="post-title"><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+    <time class="post-date"><%= date(post.date, 'YYYY-MM-DD') %></time>
+    <div class="post-excerpt"><%- post.excerpt %></div>
+  </article>
+<% }); %>

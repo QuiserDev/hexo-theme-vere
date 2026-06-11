@@ -1,0 +1,54 @@
+<article class="post">
+  <h1 class="post-title"><%= page.title %></h1>
+
+  <div class="post-meta">
+    <time class="post-date"><%= date(page.date, 'YYYY-MM-DD') %></time>
+    <% if (page.categories && page.categories.length) { %>
+    <span class="post-categories">
+      <% page.categories.each(function(cat){ %>
+      <a class="post-category" href="<%- url_for(cat.path) %>"><%= cat.name %></a>
+      <% }); %>
+    </span>
+    <% } %>
+    <% if (page.tags && page.tags.length) { %>
+    <span class="post-tags">
+      <% page.tags.each(function(tag){ %>
+      <a class="post-tag" href="<%- url_for(tag.path) %>">#<%= tag.name %></a>
+      <% }); %>
+    </span>
+    <% } %>
+    <%
+    var rawText = page.content ? strip_html(page.content).replace(/\s/g, '') : '';
+    var readingTime = Math.max(1, Math.round(rawText.length / 400));
+    %>
+    <span class="post-reading-time">~<%= readingTime %> min read</span>
+  </div>
+
+  <% if (page.toc !== false) { %>
+  <details class="toc-wrapper" id="toc-wrapper">
+    <summary class="toc-toggle">目录</summary>
+    <nav id="toc" class="toc"></nav>
+  </details>
+  <% } %>
+
+  <div class="post-content">
+    <%- page.content %>
+  </div>
+
+  <% if (page.prev || page.next) { %>
+  <nav class="post-nav<% if (page.prev && page.next) { %> has-both<% } else if (page.prev) { %> has-prev<% } else { %> has-next<% } %>">
+    <% if (page.prev) { %>
+    <a class="post-nav-item prev" href="<%- url_for(page.prev.path) %>">
+      <span class="post-nav-label">&larr; Previous</span>
+      <span class="post-nav-title"><%= page.prev.title %></span>
+    </a>
+    <% } %>
+    <% if (page.next) { %>
+    <a class="post-nav-item next" href="<%- url_for(page.next.path) %>">
+      <span class="post-nav-label">Next &rarr;</span>
+      <span class="post-nav-title"><%= page.next.title %></span>
+    </a>
+    <% } %>
+  </nav>
+  <% } %>
+</article>
