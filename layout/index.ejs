@@ -6,12 +6,13 @@
   </article>
 <% }); %>
 
+<% if (page.prev || page.next) { %>
 <nav class="pagination">
-  <%- paginator({
-    prev_text: '← Prev',
-    next_text: 'Next →',
-    mid_size: 0,
-    end_size: 0,
-    escape: false
-  }) %>
+  <% if (page.prev) { %>
+    <a class="extend prev" href="<%- url_for(page.prev === 1 ? '/' : '/page/' + page.prev + '/') %>">← Prev</a>
+  <% } %>
+  <% if (page.next) { %>
+    <a class="extend next" href="<%- url_for('/page/' + page.next + '/') %>">Next →</a>
+  <% } %>
 </nav>
+<% } %>
