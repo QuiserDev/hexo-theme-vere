@@ -885,8 +885,6 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   margin-top: 2.5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--border);
 }
 
 .pagination .extend {
