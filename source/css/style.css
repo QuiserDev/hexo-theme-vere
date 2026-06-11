@@ -316,12 +316,9 @@ a:hover {
   border-left-color: var(--accent);
 }
 
-.toc-sidebar .toc-h3 {
-  padding-left: 0.5rem;
-}
-
-.toc-sidebar .toc-h4 {
-  padding-left: 1rem;
+/* 侧边栏嵌套 TOC 缩进 */
+.toc-sidebar .toc-list .toc-list {
+  padding-left: 0.6rem;
 }
 
 /* ===== Content Card ===== */
@@ -1051,12 +1048,9 @@ details[open] .toc-toggle::before {
   line-height: 1.5;
 }
 
-.toc-h3 {
-  padding-left: 1.25rem;
-}
-
-.toc-h4 {
-  padding-left: 2.5rem;
+/* 嵌套 TOC 列表缩进 */
+.toc-list .toc-list {
+  padding-left: 1.2rem;
 }
 
 .toc-item a {

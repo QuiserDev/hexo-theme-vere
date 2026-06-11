@@ -1,1 +1,15 @@
-# My Theme Configuration
+# Vere Theme Configuration
+# ========================
+
+# 导航菜单
+# 每项包含 label（显示文本）和 path（链接路径）
+# 修改 label 为中文即可汉化导航
+menu:
+  - label: Home
+    path: /
+  - label: Archives
+    path: /archives
+  - label: About
+    path: /about
+  - label: Tags
+    path: /tags
